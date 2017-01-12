@@ -17,7 +17,7 @@ namespace LF.Service.Periods
             {
                 Console.WriteLine("Welcome:" + i);
                 NLog.LogManager.GetLogger("Log").Info("Welcome:" + i);
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
             }
             Console.WriteLine("NLog");
 
