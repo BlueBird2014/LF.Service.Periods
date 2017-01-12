@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,14 +14,8 @@ namespace LF.Service.Periods
         {
             Console.WriteLine("Program run!");
 
-            for (int i = 0; i < 100; i++)
-            {
-                Console.WriteLine("Welcome:" + i);
-                NLog.LogManager.GetLogger("Log").Info("Welcome:" + i);
-                Thread.Sleep(1000);
-            }
-            Console.WriteLine("NLog");
-
+            //OWIN 启动
+            var _server = WebApp.Start<Startup>("http://+:6001");
             Console.ReadKey();
 
         }

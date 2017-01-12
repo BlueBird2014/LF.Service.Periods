@@ -8,6 +8,9 @@ namespace LF.Service.Periods.Controllers
 {
     public class PanKouController
     {
-
+        public string GetPanKou()
+        {
+            return "123";
+        }
     }
 }
