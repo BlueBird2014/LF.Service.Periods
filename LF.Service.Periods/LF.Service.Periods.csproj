@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.1\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +47,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PanKouController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LF.Service.Periods.Common\LF.Service.Periods.Common.csproj">
+      <Project>{361626d4-b6a0-4d64-971c-9e506dfb5113}</Project>
+      <Name>LF.Service.Periods.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LF.Service.Periods.Models\LF.Service.Periods.Models.csproj">
+      <Project>{86f68cb6-f306-4f4d-9ff0-050704ba61ff}</Project>
+      <Name>LF.Service.Periods.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LF.Service.Periods.ViewModels\LF.Service.Periods.ViewModels.csproj">
+      <Project>{73fdf9f8-cf63-487b-8990-4a7c05e71fdc}</Project>
+      <Name>LF.Service.Periods.ViewModels</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AutoTask\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
